@@ -147,10 +147,11 @@ def handle_spongebob(message):
 def handle_spongebob_reply(message):
     try:
         sentence = spongebob_sentence(message.reply_to_message.text)
+        bot.reply_to(message.reply_to_message, sentence)
     except Exception as e:
         print(e)
         sentence = 'YoU CaN\'t eVeN SpElL RiGhT'
-    bot.reply_to(message.reply_to_message, sentence)
+        bot.reply_to(message, sentence)
     pass
 
 
